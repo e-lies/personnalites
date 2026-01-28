@@ -25,7 +25,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Remove duplicate/similar rows based on selected columns
-    const uniqueRows = removeDuplicateRows(data, columns);
+    const uniqueRows = removeDuplicateRows(data, columns).map((row) => {
+      const mergeColumns = columns.map((col) => row[col]).join(" ");
+      const isniLink = `https://isni.oclc.org/sru/?query=pica.nw+%3D+%22${mergeColumns}%22&operation=searchRetrieve&recordSchema=isni-b`
+      return {...row, isni: `<a href=${isniLink}>${mergeColumns}</a>`};
+    });
 
     return NextResponse.json({
       uniqueRows,
