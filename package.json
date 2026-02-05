@@ -13,15 +13,19 @@
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.18",
+    "fuse.js": "^7.1.0",
+    "natural": "^8.1.0",
     "next": "^16.1.6",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "string-similarity": "^4.0.4",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/node": "^25.0.10",
     "@types/react": "^19.2.10",
     "@types/react-dom": "^19.2.3",
+    "@types/string-similarity": "^4.0.2",
     "autoprefixer": "^10.4.23",
     "eslint": "^9.39.2",
     "eslint-config-next": "^16.1.6",
